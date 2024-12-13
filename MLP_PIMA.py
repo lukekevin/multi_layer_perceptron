@@ -3,6 +3,16 @@ import matplotlib.pyplot as plt
 """
 Designed for PIMA dataset
 """
+
+def sigmoid_activation(weight_sum):
+    return 1 / (1 + np.exp(-weight_sum))
+def sigmoid_derivative(weight_sum):
+    return weight_sum * (1 - weight_sum)
+
+
+def normal_activation(weight_sum):
+    return 1 if weight_sum>0 else 0
+
 class MLP:
     def __init__(self, raw):
 
